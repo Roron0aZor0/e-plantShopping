@@ -248,6 +248,10 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
 
+  const totalQuantity = () => {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+  };
+
   const handleAddToCart = (product) => {
     dispatch(addItem(product));
     setAddedToCart((prevState) => ({
